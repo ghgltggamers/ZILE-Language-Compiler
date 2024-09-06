@@ -1,0 +1,9 @@
+ALLOW CIO
+
+CMAIN
+
+OS ls
+
+EXIT
+
+ECMAIN
