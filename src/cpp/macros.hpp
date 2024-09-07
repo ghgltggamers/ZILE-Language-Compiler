@@ -8,3 +8,4 @@
 #include    "macros/ALLOW.hpp" // ALLOW macro
 #include    "macros/CMAIN.hpp" // CMAIN macro
 #include    "macros/ECMAIN.hpp" // ECMAIN macro
+#include    "macros/CO.hpp" // CO macro

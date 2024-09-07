@@ -75,6 +75,12 @@ int main(int argc, char * argv[]){
                     line_number += 1;
                     continue;
                 }
+                else if (code.find("CO ") != -1){
+                    cpp += CO(code);
+
+                    line_number += 1;
+                    continue;
+                }
                  // checking for ; macro
                 else if (code.find(";") != -1){
                     continue;

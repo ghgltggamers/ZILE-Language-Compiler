@@ -2,6 +2,8 @@ ALLOW CIO
 
 CMAIN
 
+CO This is out first zile program ever
+
 OS ls
 
 EXIT
