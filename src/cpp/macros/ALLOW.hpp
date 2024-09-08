@@ -13,7 +13,7 @@ std::string ALLOW(std::string lang_zile){// Takes zile code as string and then r
     std::string keyword = "ALLOW ";
 
     // extracting the command from zile
-    std::string command = lang_zile.substr(keyword.length()); // extracting the word after OS string length
+    std::string command = lang_zile.substr(lang_zile.find(keyword) + keyword.length()); // extracting the word after OS string length
 
     // for CIO - Console Input Output.
     if (command == "CIO"){

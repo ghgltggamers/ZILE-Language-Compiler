@@ -13,7 +13,7 @@ std::string OS(std::string lang_zile){// Takes zile code as string and then retu
     std::string keyword = "OS ";
 
     // extracting the command from zile
-    std::string command = lang_zile.substr(keyword.length()); // extracting the word after OS string length
+    std::string command = lang_zile.substr(lang_zile.find(keyword) + keyword.length()); // extracting the word after OS string length
 
     // cpp conversion
     std::string cpp = "std::system(\"" + command + "\");\n"; // embedding the command to the system function

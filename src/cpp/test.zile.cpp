@@ -4,7 +4,7 @@
 
 #include <iostream>
 int main(int argc, char * argv[]){
-std::cout<<"This is out first zile program ever";
+std::cout<<"This is our zile program";
 std::system("ls");
 }
 

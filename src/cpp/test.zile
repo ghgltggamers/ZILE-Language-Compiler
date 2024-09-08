@@ -1,11 +1,14 @@
 ALLOW CIO
 
-CMAIN
+    CMAIN
 
-CO This is out first zile program ever
 
-OS ls
+        CO This is our zile program
 
-EXIT
 
-ECMAIN
+        OS ls
+
+        ; Hellow world 2024
+
+
+    ECMAIN

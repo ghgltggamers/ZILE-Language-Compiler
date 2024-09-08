@@ -75,6 +75,7 @@ int main(int argc, char * argv[]){
                     line_number += 1;
                     continue;
                 }
+                // checking for CO macro
                 else if (code.find("CO ") != -1){
                     cpp += CO(code);
 
@@ -111,6 +112,12 @@ int main(int argc, char * argv[]){
             std::string sys_exec_command = "g++ " + file_name_zile + ".cpp";
 
             // std::system(sys_exec_command.c_str()); this has a problem leter which will be fixed
+            // updating the C++ compiler from g++ to clang on 08/09/2024 at: 10:26pm
+            sys_exec_command = "clang++ " + file_name_zile + ".cpp -o bfcpp";
+            // we will fix ld error soon but for now zile will only return c++ file which will manuallu needed to be compiled
+
+            // executing compiler
+            // std::system(sys_exec_command.c_str());
 
         }
         else {

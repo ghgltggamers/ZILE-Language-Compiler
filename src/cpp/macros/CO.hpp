@@ -13,7 +13,7 @@ std::string CO(std::string lang_zile){// Takes zile code as string and then retu
     std::string keyword = "CO ";
 
     // extracting the command from zile
-    std::string aplhabets = lang_zile.substr(keyword.length()); // extracting the word after CO string length
+    std::string aplhabets = lang_zile.substr(lang_zile.find(keyword) + keyword.length()); // extracting the word after CO string length
 
     // cpp conversion
     std::string cpp = "std::cout<<\"" + aplhabets + "\";\n"; // embedding the command to the cout
