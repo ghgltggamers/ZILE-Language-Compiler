@@ -9,4 +9,9 @@
 #include    "macros/CMAIN.hpp" // CMAIN macro
 #include    "macros/ECMAIN.hpp" // ECMAIN macro
 #include    "macros/CO.hpp" // CO macro
+#include    "macros/COV.hpp" // COV macro
+#include    "macros/GOV.hpp" // GOV macro
+#include    "macros/IOV.hpp" // IOV macro
+#include    "macros/MOV.hpp" // MOV macro
+#include    "macros/ROV.hpp" // ROV macro
 // #include    "macros/MOV.hpp" // MOV macro

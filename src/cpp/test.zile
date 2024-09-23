@@ -1,4 +1,6 @@
 ALLOW CIO
+ALLOW FIO
+ALLOW DS
 
     CMAIN
 
@@ -8,7 +10,36 @@ ALLOW CIO
 
         OS ls
 
+        CO \n
+
         ; Hellow world 2024
+
+
+        ; Let's initalise out Data Storage Macros
+
+        ; creting a Macro
+        
+        COV a
+        COV b
+
+        IOV a,This is the data of a 
+        IOV b,This is the data of b
+
+        ROV a,b
+
+        GOV a
+
+        GOV b
+        GOV b
+        GOV b
+        GOV b
+        GOV b
+
+        ;FREE_GOV
+
+        GOV b
+
+        CO GOV_VALUE
 
 
     ECMAIN

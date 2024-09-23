@@ -56,6 +56,10 @@ int main(int argc, char * argv[]){
                         std::cout<<"ZILA Syntax ERROR found on line number "<<line_number<<", Unknown ZSYSARG found for ALLOW. ALLOW can only ALLOW executing valid SYSARG";
                     }
                 }
+                // checking for ; macro
+                else if (code.find(";") != -1){
+                    continue;
+                }
                  // checking for ECMAIN macro
                 else if (code.find("ECMAIN") != -1){
                     cpp += ECMAIN(code);
@@ -82,8 +86,44 @@ int main(int argc, char * argv[]){
                     line_number += 1;
                     continue;
                 }
-                 // checking for ; macro
-                else if (code.find(";") != -1){
+                // checking for COV macro
+                else if (code.find("COV ") != -1){
+                    cpp += COV(code);
+
+                    line_number += 1;
+                    continue;
+                }
+                // checking for GOV macro
+                else if (code.find("GOV ") != -1){
+                    cpp += GOV(code);
+
+                    line_number += 1;
+                    continue;
+                }
+                // checking for IOV macro
+                else if (code.find("IOV ") != -1){
+                    cpp += IOV(code);
+
+                    line_number += 1;
+                    continue;
+                }
+                // checking for MOV macro
+                else if (code.find("MOV ") != -1){
+                    cpp += MOV(code);
+
+                    line_number += 1;
+                    continue;
+                }
+                // checking for ROV macro
+                else if (code.find("ROV ") != -1){
+                    cpp += ROV(code);
+
+                    line_number += 1;
+                    continue;
+                }
+                // checking for macro FREE_GOV
+                else if (code.find("FREE_GOV") != -1){
+                    cpp += "FREE_GOV();\n";
                     continue;
                 }
                  // checking for '' macro
@@ -92,7 +132,7 @@ int main(int argc, char * argv[]){
                 }
                 // checking for macro EXIT
                 else if (code.find("EXIT") != -1){
-                    cpp += "exit ( 3 );";
+                    cpp += "exit ( 3 );\n";
                     continue;
                 }
                 else {
