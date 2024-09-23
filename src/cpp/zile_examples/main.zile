@@ -1,0 +1,43 @@
+ALLOW CIO
+ALLOW FIO
+ALLOW DS
+
+CMAIN
+
+    CO Loading the program...\n
+    CO Loaded Program\n|-> Trying to create aplha...\n
+
+    COV alpha
+    CO |-> Trying to write aplha...\n
+    IOV alpha,alnum445
+
+    CO |-> Trying to create beeta...\n
+
+    COV beeta
+    CO |-> Trying to write beeta...\n
+    IOV beeta,benum445
+
+    CO |-> Trying to create base_system...\n
+    COV baseSystem
+    CO |-> Trying to write the base_system...\n
+    IOV baseSystem,GNU/GCC G++ COMPILES Are here in this base system\n\n |------------------Your machiene is here-----------------|
+
+    CO \n\n Fetching alpha, beeta, baseSystem
+
+    GOV alpha
+    GOV beeta
+    GOV baseSystem
+
+    CO \n\n Fetching done with status success\n\n
+    CO Outputing the fetched data...\n\n
+
+    CO GOV_VALUE
+
+    CO Releasing the memory...
+
+    FREE_GOV
+
+    CO Everything done successfully!\n\n
+
+
+ECMAIN
