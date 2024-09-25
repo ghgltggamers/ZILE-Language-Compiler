@@ -20,7 +20,14 @@ std::string IOV(std::string lang_zile){// Takes zile code as string and then ret
     std::string second = command.substr(command.find(",")+1);
 
     // cpp conversion
-    std::string cpp = "IOV(\"" + first + "\" , \"" + second + "\");\n"; // embedding the command to the IOB function
+    std::string cpp;
+
+    if (second.find("GOV_VALUE") != -1){
+        cpp = "IOV(\"" + first + "\" , " + "GOV_VALUE" + ");\n"; // embedding the command to the IOB function
+    }
+    else {
+        cpp = "IOV(\"" + first + "\" , \"" + second + "\");\n"; // embedding the command to the IOB function
+    }
 
     // returning cpp
     return cpp;
