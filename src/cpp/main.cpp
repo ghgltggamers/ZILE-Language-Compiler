@@ -57,88 +57,95 @@ int main(int argc, char * argv[]){
                     }
                 }
                 // checking for ; macro
-                else if (code.find(";") != -1){
+                if (code.find(";") != -1){
                     continue;
                 }
                  // checking for ECMAIN macro
-                else if (code.find("ECMAIN") != -1){
+                if (code.find("ECMAIN") != -1){
                     cpp += ECMAIN(code);
                     line_number += 1;
                     continue;
                 }
                  // checking for CMAIN macro
-                else if (code.find("CMAIN") != -1){
+                if (code.find("CMAIN") != -1){
                     cpp += CMAIN(code);
 
                     line_number += 1;
                     continue;
                 }
                  // checking for OS macro
-                else if (code.find("OS ") != -1){
+                if (code.find("OS ") != -1){
                     cpp += OS(code);
                     line_number += 1;
                     continue;
                 }
                 // checking for CO macro
-                else if (code.find("CO ") != -1){
+                if (code.find("CO ") != -1){
                     cpp += CO(code);
 
                     line_number += 1;
                     continue;
                 }
                 // checking for COV macro
-                else if (code.find("COV ") != -1){
+                if (code.find("COV ") != -1){
                     cpp += COV(code);
 
                     line_number += 1;
                     continue;
                 }
                 // checking for GOV macro
-                else if (code.find("GOV ") != -1){
+                if (code.find("GOV ") != -1){
                     cpp += GOV(code);
 
                     line_number += 1;
                     continue;
                 }
                 // checking for IOV macro
-                else if (code.find("IOV ") != -1){
+                if (code.find("IOV ") != -1){
                     cpp += IOV(code);
 
                     line_number += 1;
                     continue;
                 }
                 // checking for MOV macro
-                else if (code.find("MOV ") != -1){
+                if (code.find("MOV ") != -1){
                     cpp += MOV(code);
 
                     line_number += 1;
                     continue;
                 }
                 // checking for ROV macro
-                else if (code.find("ROV ") != -1){
+                if (code.find("ROV ") != -1){
                     cpp += ROV(code);
 
                     line_number += 1;
                     continue;
                 }
                 // checking for macro FREE_GOV
-                else if (code.find("FREE_GOV") != -1){
+                if (code.find("FREE_GOV") != -1){
                     cpp += "FREE_GOV();\n";
                     continue;
                 }
+
+
+                // checking for macro GOV_VALUE
+                if (code.find("GOV_VALUE") != -1){
+                    cpp += "GOV_VALUE";
+                    // continue;
+                }
                  // checking for '' macro
-                else if (code.find("") != -1){
+                if (code.find("") != -1){
                     continue;
                 }
                 // checking for macro EXIT
-                else if (code.find("EXIT") != -1){
+                if (code.find("EXIT") != -1){
                     cpp += "exit ( 3 );\n";
                     continue;
                 }
-                else {
+                /*else {
                     break;// exit the file reader
                     std::cout<<"ZILA Syntax ERROR found on line number "<<line_number<<", Unknown identifier or MACRO found";
-                }
+                }*/
 
             }
 

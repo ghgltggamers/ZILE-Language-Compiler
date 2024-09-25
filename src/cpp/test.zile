@@ -5,41 +5,22 @@ ALLOW DS
     CMAIN
 
 
-        CO This is our zile program
+        CO Checking for files
+
+
+
+        CO \n\n\n\n
 
 
         OS ls
 
-        CO \n
-
-        ; Hellow world 2024
-
-
-        ; Let's initalise out Data Storage Macros
-
-        ; creting a Macro
+        ; Creating a vertor file 
         
-        COV a
-        COV b
-
-        IOV a,This is the data of a 
-        IOV b,This is the data of b
-
-        ROV a,b
+        COV c
 
         GOV a
 
-        GOV b
-        GOV b
-        GOV b
-        GOV b
-        GOV b
 
-        ;FREE_GOV
-
-        GOV b
-
-        CO GOV_VALUE
-
+        IOV c,GOV_VALUE
 
     ECMAIN
