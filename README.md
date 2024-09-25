@@ -365,7 +365,7 @@ ECMAIN
 
 ```
 
-Note :- MOV and ROV relies on IOV and GOV for Functioning in the backend means these are not independent MACROS where COV, IOV, GOV are completly independent macros. and for using Output Vector files you need to allow CIO, FIO and DS with the help of ALLOW MACRO.
+Note :- MOV and ROV relies on IOV and GOV for Functioning in the backend means these are not independent MACROS where COV, IOV, GOV are completly independent macros. and for using Output Vector files you need to allow CIO, FIO and DS with the help of ALLOW MACRO. and COV, IOV, GOV , MOV, ROV are very fast and efficient because they barely utilises volatile memory for preventing memory leaks 
 
 
 
