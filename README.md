@@ -89,6 +89,8 @@ Note: every MACRO will be full-filled with capital charcters only which means th
 List of Supported values or actions by ALLOW
 
 *CIO* : Stands for Console Input & Output
+*FIO* : Stands for File Input & Output
+*DS* : Stands for Data Storer
 
 Only actions from this list can be given to ALLOW macro.
 
@@ -168,6 +170,7 @@ CO Allows the value input means you need to parse the value which you want to wr
 
 Example
 ```zile
+ALLOW CIO
 
 CMAIN
 
@@ -183,7 +186,191 @@ ECMAIN
 
 ```
 
+
+### OV [Concept]
+<code>OV</code> stands for Output Vector which are a part of zile language because these were introduced by the zile language it self which stores some data on your non-voatile memory premanentaly and you can use this data anytime you want. Output Vector are special files called Vector Files in zile which are much robust and powerfull as compared to your normal files because vector files allows you to do quick data manipulation between infinite vector file for example replacing to files data completly , moving file data etc.
+
+Example :-
+```zile
+
+;./root
+;--/main.zile
+;--/yourvector
+;--/yourvectorfileetc
+
+; You can manipulate both vector files or even more
+
+```
+
+Vector Files do not have a file extension and every file can become a vector file once it is parsed inside the zile program.
+
+
+
+### COV [MACRO]
+<code>COV</code> MACRO stands for Create Output Vector and is used for creating Output Vector files without any limit, COV can create infinite number of vector files based on program.
+
+Syntax :-
+
+COV [Vector File name]
+
+Example
+```zile
+ALLOW CIO
+ALLOW FIO
+ALLOW DS
+
+CMAIN
+
+; This will create an output vector file
+COV myVector
+
+; Multiple vector file
+COV 1
+COV 2
+COV 3
+
+; These files will be stored in your real non-volatile memory
+
+ECMAIN
+
+```
+
+
+### IOV [MACRO]
+<code>IOV</code> MACRO stands for Input Output Vector File and is used for completly wiping the previous Vector File data and inserting new data to it .
+
+Syntax :-
+
+IOV [Vector file name],[Vector file data]
+
+Example
+```zile
+ALLOW CIO
+ALLOW FIO
+ALLOW DS
+
+CMAIN
+
+; This will create an output vector file
+COV myVector
+
+; Inserting data to myVector where data is hellow world 2024
+IOV myVector,Hellow world 2024
+
+; Addign multiple lines to myVector
+IOV myVector Hellow world 2024 \n New line
+
+; \n stands for new line and it is a standard C++ escape sequence character
+
+ECMAIN
+
+```
+
+
+
+### GOV [MACRO]
+<code>GOV</code> MACRO stands for Get Output Vector File and is used for Fetching all the data of a Vector file and storing it in your volatile memory for the program until it exits. The data of Output Vector File can be accessed using GOV_VALUE and all the data stored in GOV can be released or removed by FREE_GOV macro
+
+Syntax :-
+
+GOV [Output Vector Name]
+
+Example
+```zile
+ALLOW CIO
+ALLOW FIO
+ALLOW DS
+
+CMAIN
+
+; This will create an output vector file
+COV myVector
+
+; Inserting data to myVector where data is hellow world 2024
+IOV myVector,Hellow world 2024
+
+; Fetching data from GOV
+GOV myVector
+
+; Outputing vector data
+CO GOV_VALUE
+
+; Releasing GOV data
+FREE_GOV
+
+; \n stands for new line and it is a standard C++ escape sequence character
+
+ECMAIN
+
+```
+
+
+### MOV [MACRO]
+<code>MOV</code> MACRO stands for Move Output Vector File and is used for completly moving the vector file data from 1 file to another resulting in another file containing 1 file data and 1 file will be complely wiped out.
+
+Syntax :-
+
+MOV [Vector file name],[Target Vector name]
+
+Example
+```zile
+ALLOW CIO
+ALLOW FIO
+ALLOW DS
+
+CMAIN
+
+; This will create output vector files
+COV myVector
+COV myVector2
+
+; Inserting data to myVector where data is hellow world 2024
+IOV myVector,Hellow world 2024
+IOV myVector2,2nd file
+
+; Moving data from myVector to myVector2
+MOV myVector,myVector2
+
+ECMAIN
+
+```
+
+
+### ROV [MACRO]
+<code>ROV</code> MACRO stands for Replace Output Vector Files and is used for completly Replacing the data of 1 vector file with another vector file.
+Syntax :-
+
+ROV [Vector file name],[Target Vector name]
+
+Example
+```zile
+ALLOW CIO
+ALLOW FIO
+ALLOW DS
+
+CMAIN
+
+; This will create output vector files
+COV myVector
+COV myVector2
+
+; Inserting data to myVector where data is hellow world 2024
+IOV myVector,Hellow world 2024
+IOV myVector2,2nd file
+
+; Replacing data from myVector to myVector2
+ROV myVector,myVector2
+
+ECMAIN
+
+```
+
+Note :- MOV and ROV relies on IOV and GOV for Functioning in the backend means these are not independent MACROS where COV, IOV, GOV are completly independent macros. and for using Output Vector files you need to allow CIO, FIO and DS with the help of ALLOW MACRO.
+
+
+
 CO -> was later added to zile in Zile 0.1 BETA - Upgrade version
+FIO, DS -> were later added to zile in Zile 0.1 BETA TEST 2 - Upgrade version
 
 ## Ending of the documentation
 This documentation will give you every aspect of Zile language in depth.
@@ -192,5 +379,6 @@ This documentation will give you every aspect of Zile language in depth.
 
                 Written by :: GHGL TG GAMER
                         on :: 07/09/2024, 04:08pmm india/delhi
+                Updated on :: 25/09/2024, 11:18am india/delhi
 
 ------------------------------------------------------------------
