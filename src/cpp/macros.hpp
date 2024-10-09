@@ -14,4 +14,5 @@
 #include    "macros/IOV.hpp" // IOV macro
 #include    "macros/MOV.hpp" // MOV macro
 #include    "macros/ROV.hpp" // ROV macro
+#include    "macros/CI.hpp" // CI macro
 // #include    "macros/MOV.hpp" // MOV macro

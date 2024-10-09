@@ -86,6 +86,13 @@ int main(int argc, char * argv[]){
                     line_number += 1;
                     continue;
                 }
+                // checking for CO macro
+                if (code.find("CI ") != -1){
+                    cpp += CI(code);
+
+                    line_number += 1;
+                    continue;
+                }
                 // checking for COV macro
                 if (code.find("COV ") != -1){
                     cpp += COV(code);

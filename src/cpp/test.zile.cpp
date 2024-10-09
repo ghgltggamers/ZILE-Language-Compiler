@@ -3,6 +3,7 @@
 // This file is only the compilation part of ZILA System level Lang, Please do not modify this file without proper knowledge of how ZILA treates .cpp files and how these are going to be compiled
 
 #include <iostream>
+std::string CI_DATA;
 #include <fstream>
 
 int COV(std::string vname){// iN ZILE COV stands for Create Output Vector
@@ -77,21 +78,30 @@ int ROV(std::string v1, std::string v2){
     return 1;
 }
         int main(int argc, char * argv[]){
-std::cout<<"This is our zile program";
-std::system("ls");
-std::cout<<"\n";
 COV("a");
-COV("b");
-IOV("a" , "This is the data of a ");
-IOV("b" , "This is the data of b");
-ROV("a" , "b");
-GOV("a");
-GOV("b");
-GOV("b");
-GOV("b");
-GOV("b");
-GOV("b");
-GOV("b");
+std::cout<<"Enter your name please";
+std::cin>>CI_DATA;
+std::cout<<"\n";
+std::cout<<"Output Vector named ";
+std::cout<<CI_DATA;
+std::cout<<"...";
+COV(CI_DATA);
+std::cout<<"done";
+IOV("a" , CI_DATA);
+std::cout<<"\n\n\n\n\n\n\n";
+std::cout<<"COMMAND PLEASE : ";
+std::cin>>CI_DATA;
+std::system(CI_DATA.c_str());
+COV(CI_DATA);
+std::cout<<"Moving from a to ";
+std::cout<<CI_DATA;
+MOV("a" , CI_DATA);
+std::cout<<"EVerything done with status success!\n\n\n";
+std::cout<<"Enter the macro name to fetch : ";
+std::cout<<"";
+std::cin>>CI_DATA;
+GOV(CI_DATA);
+std::cout<<"\n\n The macro data is ";
 std::cout<<GOV_VALUE;
 }
 

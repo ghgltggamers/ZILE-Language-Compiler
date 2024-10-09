@@ -1,26 +1,45 @@
+; This is a demo program for testing purpose only
+
 ALLOW CIO
 ALLOW FIO
 ALLOW DS
 
     CMAIN
 
+        COV a
+        CI Enter your name please
+        CO \n
 
-        CO Checking for files
+        CO Output Vector named 
+        CO MACRO CI_DATA
+        CO ...
 
+        COV MACRO CI_DATA
 
+        CO done
 
-        CO \n\n\n\n
+        IOV a, MACRO CI_DATA
 
+        CO \n\n\n\n\n\n\n
 
-        OS ls
+        CI COMMAND PLEASE : 
 
-        ; Creating a vertor file 
-        
-        COV c
+        OS MACRO CI_DATA
 
-        GOV a
+        COV MACRO CI_DATA
 
+        CO Moving from a to 
+        CO MACRO CI_DATA
 
-        IOV c,GOV_VALUE
+        MOV a, MACRO CI_DATA
+
+CO EVerything done with status success!\n\n\n
+
+    CO Enter the macro name to fetch : 
+    CI 
+ GOV MACRO CI_DATA
+
+    CO \n\n The macro data is 
+    CO MACRO GOV_VALUE
 
     ECMAIN
