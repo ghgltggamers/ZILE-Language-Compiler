@@ -20,7 +20,28 @@ std::string ROV(std::string lang_zile){// Takes zile code as string and then ret
     std::string second = command.substr(command.find(",")+1);
 
     // cpp conversion
-    std::string cpp = "ROV(\"" + first + "\" , \"" + second + "\");\n"; // embedding the command to the ROV function
+    // std::string cpp = "ROV(\"" + first + "\" , \"" + second + "\");\n"; // embedding the command to the ROV function
+
+    std::string first_final = "";
+    std::string second_final = "";
+    if (first.find("MACRO ") != -1){
+        std::string key_macro = "MACRO ";
+        first_final = first.substr(first.find(key_macro) + key_macro.length());
+    }
+    else {
+        first_final = "\"" + first + "\"";
+    }
+
+
+    if (second.find("MACRO ") != -1){
+        std::string key_macro = "MACRO ";
+        second_final = second.substr(second.find(key_macro) + key_macro.length());
+    }
+    else {
+        second_final = "\"" + second + "\"";
+    }
+
+    std::string cpp = "ROV(" + first_final + " , " + second_final + ");\n"; // embedding the command to the MOV function
 
     // returning cpp
     return cpp;

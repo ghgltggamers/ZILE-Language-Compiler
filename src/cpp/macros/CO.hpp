@@ -17,8 +17,10 @@ std::string CO(std::string lang_zile){// Takes zile code as string and then retu
 
     // cpp conversion
     std::string cpp;
-    if (aplhabets == "GOV_VALUE"){
-        cpp = "std::cout<<GOV_VALUE;\n";
+    if (aplhabets.find("MACRO ") != -1){
+        std::string key_macro = "MACRO ";
+        std::string MACRO = aplhabets.substr(aplhabets.find(key_macro) + key_macro.length());
+        cpp = "std::cout<<" + MACRO + ";\n";
     }
     else {
         cpp = "std::cout<<\"" + aplhabets + "\";\n"; // embedding the command to the cout

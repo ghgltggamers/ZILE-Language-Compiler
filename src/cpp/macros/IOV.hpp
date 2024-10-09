@@ -22,12 +22,34 @@ std::string IOV(std::string lang_zile){// Takes zile code as string and then ret
     // cpp conversion
     std::string cpp;
 
-    if (second.find("GOV_VALUE") != -1){
-        cpp = "IOV(\"" + first + "\" , " + "GOV_VALUE" + ");\n"; // embedding the command to the IOB function
+    // if (second.find("MACRO ") != -1){
+    //     std::string key_macro = "MACRO ";
+    //     std::string 
+    //     cpp = "IOV(\"" + first + "\" , " + "GOV_VALUE" + ");\n"; // embedding the command to the IOB function
+    // }
+    // else {
+    // }
+
+    std::string first_final = "";
+    std::string second_final = "";
+    if (first.find("MACRO ") != -1){
+        std::string key_macro = "MACRO ";
+        first_final = first.substr(first.find(key_macro) + key_macro.length());
     }
     else {
-        cpp = "IOV(\"" + first + "\" , \"" + second + "\");\n"; // embedding the command to the IOB function
+        first_final = "\"" + first + "\"";
     }
+
+
+    if (second.find("MACRO ") != -1){
+        std::string key_macro = "MACRO ";
+        second_final = second.substr(second.find(key_macro) + key_macro.length());
+    }
+    else {
+        second_final = "\"" + second + "\"";
+    }
+
+    cpp = "IOV(" + first_final + " , " + second_final + ");\n"; // embedding the command to the IOV function
 
     // returning cpp
     return cpp;

@@ -19,7 +19,7 @@ std::string ALLOW(std::string lang_zile){// Takes zile code as string and then r
     if (command == "CIO"){
 
         // return cpp iostream
-        return "#include <iostream>\n";
+        return "#include <iostream>\nstd::string CI_DATA;\n";
 
     }
     // for FIO - File Input Output
