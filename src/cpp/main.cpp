@@ -86,7 +86,7 @@ int main(int argc, char * argv[]){
                     line_number += 1;
                     continue;
                 }
-                // checking for CO macro
+                // checking for CI macro
                 if (code.find("CI ") != -1){
                     cpp += CI(code);
 
@@ -110,6 +110,34 @@ int main(int argc, char * argv[]){
                 // checking for IOV macro
                 if (code.find("IOV ") != -1){
                     cpp += IOV(code);
+
+                    line_number += 1;
+                    continue;
+                }
+                // checking for MATCH macro
+                if (code.find("MATCH ") != -1){
+                    cpp += MATCH(code);
+
+                    line_number += 1;
+                    continue;
+                }
+                // checking for OTHERVISE macro
+                if (code.find("OTHERVISE") != -1){
+                    cpp += OTHERVISE(code);
+
+                    line_number += 1;
+                    continue;
+                }
+                // checking for CARG macro
+                if (code.find("CARG ") != -1){
+                    cpp += CARG(code);
+
+                    line_number += 1;
+                    continue;
+                }
+                // checking for END_BLOCK macro
+                if (code.find("END_BLOCK") != -1){
+                    cpp += "}\n";
 
                     line_number += 1;
                     continue;

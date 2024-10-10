@@ -6,40 +6,16 @@ ALLOW DS
 
     CMAIN
 
-        COV a
-        CI Enter your name please
-        CO \n
+        CARG 1
 
-        CO Output Vector named 
-        CO MACRO CI_DATA
-        CO ...
+        MATCH MACRO CARG_DATA,--version
 
-        COV MACRO CI_DATA
+            CO zile test version 1.2
 
-        CO done
+        OTHERVISE
 
-        IOV a, MACRO CI_DATA
+            CO a valid command required
 
-        CO \n\n\n\n\n\n\n
-
-        CI COMMAND PLEASE : 
-
-        OS MACRO CI_DATA
-
-        COV MACRO CI_DATA
-
-        CO Moving from a to 
-        CO MACRO CI_DATA
-
-        MOV a, MACRO CI_DATA
-
-CO EVerything done with status success!\n\n\n
-
-    CO Enter the macro name to fetch : 
-    CI 
- GOV MACRO CI_DATA
-
-    CO \n\n The macro data is 
-    CO MACRO GOV_VALUE
+        END_BLOCK
 
     ECMAIN

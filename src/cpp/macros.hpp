@@ -15,4 +15,7 @@
 #include    "macros/MOV.hpp" // MOV macro
 #include    "macros/ROV.hpp" // ROV macro
 #include    "macros/CI.hpp" // CI macro
+#include    "macros/MATCH.hpp" // MATCH macro
+#include    "macros/OTHERVISE.hpp" // OTHERVISE macro
+#include    "macros/CARG.hpp" // CARG macro
 // #include    "macros/MOV.hpp" // MOV macro

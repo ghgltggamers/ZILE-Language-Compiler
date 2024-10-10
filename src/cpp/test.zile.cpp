@@ -78,31 +78,12 @@ int ROV(std::string v1, std::string v2){
     return 1;
 }
         int main(int argc, char * argv[]){
-COV("a");
-std::cout<<"Enter your name please";
-std::cin>>CI_DATA;
-std::cout<<"\n";
-std::cout<<"Output Vector named ";
-std::cout<<CI_DATA;
-std::cout<<"...";
-COV(CI_DATA);
-std::cout<<"done";
-IOV("a" , CI_DATA);
-std::cout<<"\n\n\n\n\n\n\n";
-std::cout<<"COMMAND PLEASE : ";
-std::cin>>CI_DATA;
-std::system(CI_DATA.c_str());
-COV(CI_DATA);
-std::cout<<"Moving from a to ";
-std::cout<<CI_DATA;
-MOV("a" , CI_DATA);
-std::cout<<"EVerything done with status success!\n\n\n";
-std::cout<<"Enter the macro name to fetch : ";
-std::cout<<"";
-std::cin>>CI_DATA;
-GOV(CI_DATA);
-std::cout<<"\n\n The macro data is ";
-std::cout<<GOV_VALUE;
+std::string CARG_DATA = argv[0];
+CARG_DATA = argv[1];
+if(CARG_DATA == "--version"){
+std::cout<<"zile test version 1.2";
+}else {std::cout<<"a valid command required";
+}
 }
 
 
