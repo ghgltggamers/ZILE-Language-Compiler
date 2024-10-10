@@ -13,6 +13,6 @@ std::string CMAIN(std::string lang_zile){// Takes zile code as string and then r
     std::string keyword = "CMAIN"; // CMAIN means Console Main function which runs when ever the bin runs
 
     // returning the cpp main
-    return "int main(int argc, char * argv[]){\n";
+    return "int main(int argc, char * argv[]){\nstd::string CARG_DATA = argv[0];\n";
 
 }
