@@ -115,8 +115,15 @@ int main(int argc, char * argv[]){
                     continue;
                 }
                 // checking for OR MATCH macro
-                if (code.find("OR MATCH ") != -1){
+                if (code.find("OR_MATCH ") != -1){
                     cpp += OR_MATCH(code);
+
+                    line_number += 1;
+                    continue;
+                }
+                // checking for MATCH macro
+                if (code.find("END_MATCH") != -1){
+                    cpp += END_MATCH(code);
 
                     line_number += 1;
                     continue;

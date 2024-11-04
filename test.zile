@@ -12,7 +12,7 @@ ALLOW DS
 
             CO zile test version 1.2
 
-        OR MATCH CARG_DATA,version
+        OR_MATCH CARG_DATA,version
 
             CO zile test version 1.3
 
@@ -20,6 +20,6 @@ ALLOW DS
 
             CO a valid command required
 
-        END_BLOCK
+        END_MATCH
 
     ECMAIN

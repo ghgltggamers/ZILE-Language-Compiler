@@ -10,7 +10,7 @@
 std::string OR_MATCH(std::string lang_zile){// Takes zile code as string and then returns the required cpp
 
     // keyword
-    std::string keyword = "OR MATCH ";
+    std::string keyword = "OR_MATCH ";
 
     // extracting the command from zile
     std::string command = lang_zile.substr(lang_zile.find(keyword) + keyword.length()); // extracting the word after OS string length
