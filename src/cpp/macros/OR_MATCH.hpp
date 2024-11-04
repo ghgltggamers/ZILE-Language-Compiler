@@ -1,4 +1,4 @@
-//  This file is a part of ZILE Compiler 2024 -v0.1 : Contains the MATCH macro
+//  This file is a part of ZILE Compiler 2024 -v0.1 : Contains the OR MATCH macro
 
 
 #include   <iostream>
@@ -7,10 +7,10 @@
 #include   <string.h>
 #include      <cmath>
 
-std::string MATCH(std::string lang_zile){// Takes zile code as string and then returns the required cpp
+std::string OR_MATCH(std::string lang_zile){// Takes zile code as string and then returns the required cpp
 
     // keyword
-    std::string keyword = "MATCH ";
+    std::string keyword = "OR MATCH ";
 
     // extracting the command from zile
     std::string command = lang_zile.substr(lang_zile.find(keyword) + keyword.length()); // extracting the word after OS string length
@@ -49,7 +49,7 @@ std::string MATCH(std::string lang_zile){// Takes zile code as string and then r
         second_final = "\"" + second + "\"";
     }
 
-    cpp = "if(" + first_final + " == " + second_final + "){\n"; // embedding the command to the IOV function
+    cpp = "}else if(" + first_final + " == " + second_final + "){\n"; // embedding the command to the IOV function
     
     // returning cpp
     return cpp;

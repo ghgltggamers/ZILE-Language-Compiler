@@ -82,6 +82,8 @@ std::string CARG_DATA = argv[0];
 CARG_DATA = argv[1];
 if(CARG_DATA == "--version"){
 std::cout<<"zile test version 1.2";
+}else if("CARG_DATA" == "version"){
+std::cout<<"zile test version 1.3";
 }else {std::cout<<"a valid command required";
 }
 }

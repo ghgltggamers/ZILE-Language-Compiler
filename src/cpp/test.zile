@@ -12,6 +12,10 @@ ALLOW DS
 
             CO zile test version 1.2
 
+        OR MATCH CARG_DATA,version
+
+            CO zile test version 1.3
+
         OTHERVISE
 
             CO a valid command required

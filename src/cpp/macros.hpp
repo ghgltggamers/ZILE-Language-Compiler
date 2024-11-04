@@ -18,4 +18,5 @@
 #include    "macros/MATCH.hpp" // MATCH macro
 #include    "macros/OTHERVISE.hpp" // OTHERVISE macro
 #include    "macros/CARG.hpp" // CARG macro
+#include    "macros/OR_MATCH.hpp" // OR MATCH macro
 // #include    "macros/MOV.hpp" // MOV macro
